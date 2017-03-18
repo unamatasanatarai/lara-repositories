@@ -10,30 +10,30 @@ abstract class EloquentRepository extends AbstractRepository
 
     protected $model;
 
-
     public function create(array $attributes)
     {
         return call_user_func_array("{$this->model}::create", [ $attributes ]);
     }
-
 
     public function all($columns = [ '*' ])
     {
         return call_user_func_array("{$this->model}::all", [ $columns ]);
     }
 
-
     public function find($id, $columns = [ '*' ])
     {
         return call_user_func_array("{$this->model}::find", [ $id, $columns ]);
     }
-
 
     public function delete($ids)
     {
         return call_user_func_array("{$this->model}::destroy", [ $ids ]);
     }
 
+    public function paginate($perPage, $columns = [ '*' ])
+    {
+        return call_user_func_array("{$this->model}::paginate", [ $perPage, $columns ]);
+    }
 
     protected function validateModel()
     {
