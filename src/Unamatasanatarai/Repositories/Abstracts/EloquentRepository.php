@@ -13,13 +13,13 @@ abstract class EloquentRepository extends AbstractRepository
 
     public function create(array $attributes)
     {
-        return call_user_func_array("{$this->model}::create", $attributes);
+        return call_user_func_array("{$this->model}::create", [ $attributes ]);
     }
 
 
     public function all($columns = [ '*' ])
     {
-        return call_user_func_array("{$this->model}::all", $columns);
+        return call_user_func_array("{$this->model}::all", [ $columns ]);
     }
 
 
@@ -38,7 +38,7 @@ abstract class EloquentRepository extends AbstractRepository
     protected function validateModel()
     {
         if ( ! is_subclass_of($this->model, Model::class)) {
-            throw new EloquentRepositoryException("Class {$this->model} must be an instance of ".Model::class);
+            throw new EloquentRepositoryException("Class {$this->model} must be an instance of " . Model::class);
         }
     }
 }
