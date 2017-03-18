@@ -2,9 +2,7 @@
 
 namespace Unamatasanatarai\Repositories\Abstracts;
 
-use Unamatasanatarai\Repositories\Exceptions\EloquentRepositoryException;
 use Unamatasanatarai\Repositories\Contracts\RepositoryInterface;
-use Illuminate\Database\Eloquent\Model;
 
 abstract class AbstractRepository implements RepositoryInterface
 {
@@ -16,6 +14,7 @@ abstract class AbstractRepository implements RepositoryInterface
     {
         $this->validateModel();
     }
+
 
     abstract protected function validateModel();
 

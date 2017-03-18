@@ -2,21 +2,13 @@
 
 namespace Unamatasanatarai\Repositories\Abstracts;
 
-use Unamatasanatarai\Repositories\Exceptions\EloquentRepositoryException;
 use Illuminate\Database\Eloquent\Model;
+use Unamatasanatarai\Repositories\Exceptions\EloquentRepositoryException;
 
 abstract class EloquentRepository extends AbstractRepository
 {
 
     protected $model;
-
-
-    protected function validateModel()
-    {
-        if ( ! is_subclass_of($this->model, Model::class)) {
-            throw new EloquentRepositoryException("Class {$this->model} must be an instance of ".Model::class);
-        }
-    }
 
 
     public function create(array $attributes)
@@ -40,5 +32,13 @@ abstract class EloquentRepository extends AbstractRepository
     public function delete($ids)
     {
         return call_user_func_array("{$this->model}::destroy", [ $ids ]);
+    }
+
+
+    protected function validateModel()
+    {
+        if ( ! is_subclass_of($this->model, Model::class)) {
+            throw new EloquentRepositoryException("Class {$this->model} must be an instance of ".Model::class);
+        }
     }
 }
