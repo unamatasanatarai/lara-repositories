@@ -27,7 +27,7 @@ abstract class EloquentRepository extends AbstractRepository
 
     public function all($columns = [ '*' ])
     {
-        return call_user_func_array("{$this->model}::get", $columns);
+        return call_user_func_array("{$this->model}::all", $columns);
     }
 
 
