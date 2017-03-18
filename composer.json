@@ -1,0 +1,22 @@
+{
+    "name": "unamatasanatarai/lara-repositories",
+    "type": "library",
+    "description": "Repository pattern",
+    "homepage": "https://github.com/unamatasanatarai/lara-repositories",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Unamata Sanatarai",
+            "email": "unamatasanatarai@gmail.com",
+            "homepage": "https://github.com/unamatasanatarai/",
+            "role": "Main Developper"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Unamatasanatarai\\Repositories\\" : "src/Unamatasanatarai/Repositories/"
+        }
+    },
+    "minimum-stability": "dev"
+}
