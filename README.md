@@ -56,3 +56,4 @@ Controller
     {
         dd($repo->create([]));
 ```
+https://packagist.org/packages/unamatasanatarai/lara-repositories
