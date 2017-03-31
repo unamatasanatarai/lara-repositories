@@ -7,6 +7,8 @@ interface RepositoryInterface
 
     public function create(array $attributes);
 
+    public function update($id, array $attributes);
+
     public function all($columns = [ '*' ]);
 
     public function find($id, $columns = [ '*' ]);

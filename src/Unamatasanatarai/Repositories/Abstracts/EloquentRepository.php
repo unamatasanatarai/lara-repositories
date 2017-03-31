@@ -15,6 +15,11 @@ abstract class EloquentRepository extends AbstractRepository
         return call_user_func_array("{$this->model}::create", [ $attributes ]);
     }
 
+    public function update($id, array $attributes)
+    {
+        return $this->find($id)->update($attributes);
+    }
+
     public function all($columns = [ '*' ])
     {
         return call_user_func_array("{$this->model}::all", [ $columns ]);
